@@ -20,7 +20,7 @@ void usage(const char* argv0) {
        "  --conet or -c <number>:    CAEN Conet connection daisy chain number\n"
        "  --vme or -v <hexadecimal>: 16 most significant bits of the VME address (the value set by the rotary switches on the board).\n"
        "  --reset or -r:             reset the counters after reading\n"
-       "The output is two columns of hexadecimal numbers: the address and the value of a register.\n"
+       "The output is two columns: the name and the value of a counter\n"
   ;
 };
 
