@@ -61,7 +61,7 @@ while (<$addresses>) {
         $name = $r->{short_name};
         $description = $r->{description};
       } else {
-        $name = $group . $index;
+        $name = $group . $$index;
         $description = $name;
       };
       register $name, $description, hex $address;
