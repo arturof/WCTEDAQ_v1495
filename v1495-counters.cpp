@@ -99,7 +99,7 @@ int main(int argc, char** argv) {
         << v1495.read32(counters[i].address)
         << '\n';
 
-    if (reset) v1495.write16(0x3002, 1);
+    if (reset) v1495.write32(0x3002, 1);
 
     return 0;
   } catch (std::exception& e) {
