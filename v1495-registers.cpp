@@ -98,6 +98,7 @@ int main(int argc, char** argv) {
     for (auto j = json.begin(); j != json.end(); ++j) {
       i->first  = str_to_uint16(j.key().asCString(), 16);
       i->second = str_to_uint32(j->asCString(), 16);
+      ++i;
     };
 
     caen::V1495 v1495(connection);
