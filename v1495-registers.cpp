@@ -102,6 +102,8 @@ int main(int argc, char** argv) {
     };
 
     caen::V1495 v1495(connection);
+    std::cout << "writing v1495 registers with base address "
+              << std::hex << connection.vme << std::endl;
 
     for (auto [ reg, value ] : values)
       v1495.write32(reg, value);
