@@ -2,7 +2,23 @@
 
 CXXFLAGS ?= -O2 -pipe
 
-all: v1495-registers v1495-counters cfd-registers
+# libDAQInterface location
+Dependencies =/home/mpmt/Monitoring/libDAQInterface/Dependencies
+
+ZMQLib= -L$(Dependencies)/zeromq-4.0.7/lib -lzmq
+ZMQInclude= -I$(Dependencies)/zeromq-4.0.7/include/
+
+BoostLib= -L$(Dependencies)/boost_1_66_0/install/lib -lboost_date_time -lboost_serialization -lboost_iostreams
+BoostInclude= -I$(Dependencies)/boost_1_66_0/install/include
+
+ToolDAQLib= -L$(Dependencies)/ToolDAQFramework/lib -lToolDAQChain -lServiceDiscovery -lDAQDataModelBase -lDAQStore -lTempDAQDataModel -lTempDAQTools
+ToolDAQInclude= -I$(Dependencies)/ToolDAQFramework/include
+
+ToolFrameworkLib= -L$(Dependencies)/ToolFrameworkCore/lib -lDataModelBase -lStore
+ToolFrameworkInclude= -I$(Dependencies)/ToolFrameworkCore/include
+
+# applications to compile
+all: v1495-registers v1495-counters cfd-registers v1495-counters-database
 
 v1495-registers: v1495-registers.o common.o
 	$(CXX) -o $@ $^ $(CXXFLAGS) `pkg-config --libs jsoncpp` -lcaen++ -lCAENComm
@@ -13,6 +29,9 @@ v1495-counters: v1495-counters.o common.o
 cfd-registers: cfd-registers.o common.o
 	$(CXX) -o $@ $^ $(CXXFLAGS) `pkg-config --libs jsoncpp` -lcaen++ -lCAENComm
 
+v1495-counters-database: v1495-counters-database.cpp common.o ../../Monitoring/libDAQInterface/lib/libDAQInterface.so
+	$(CXX) -o $@ $^ -O3 -fPIC -std=c++20 -Wpedantic -lcaen++ -lCAENComm -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface -lpthread $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude) $(ToolDAQLib) $(ToolFrameworkLib) $(ZMQLib) $(BoostLib) -ljsoncpp
+
 v1495-registers.o: v1495-registers.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS) `pkg-config --cflags jsoncpp`
 
@@ -21,6 +40,9 @@ v1495-counters.o: v1495-counters.cpp common.hpp counters.hpp
 
 cfd-registers.o: cfd-registers.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS) `pkg-config --cflags jsoncpp`
+
+v1495-counters-database.o: v1495-counters-database.cpp common.hpp counters.hpp
+	$(CXX) -c $< $(CXXFLAGS) -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude)
 
 common.o: common.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS)
