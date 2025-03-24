@@ -166,11 +166,11 @@ int main(int argc, char** argv) {
         { "link",    required_argument, nullptr, 'l' },
         { "reset",   no_argument,       nullptr, 'r' },
         { "vme",     required_argument, nullptr, 'v' },
-        { "noalert", no_argument,       nullptr, 'n' }
+        { "noalert", no_argument,       nullptr, 'n' },
         { "json",    required_argument, nullptr, 'j' }
       };
 
-      int c = getopt_long(argc, argv, "a:c:hl:rnv:", options, nullptr);
+      int c = getopt_long(argc, argv, "a:c:hl:rnv:j:", options, nullptr);
       if (c == -1) break;
       
       switch (c) {
@@ -201,7 +201,7 @@ int main(int argc, char** argv) {
           std::cout << "Using mode with no end-of-spill alert" << std::endl;
           no_alert_mode = true;
           break;
-        case 'n':
+        case 'j':
           std::cout << "Using json configuration file " << optarg << std::endl;
           json_config = optarg;
           break;
