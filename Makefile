@@ -3,7 +3,8 @@
 CXXFLAGS ?= -O2 -pipe
 
 # libDAQInterface location
-Dependencies =/home/mpmt/Monitoring/libDAQInterface/Dependencies
+DAQInterface= /home/mpmt/Monitoring/libDAQInterface
+Dependencies= $(DAQInterface)/Dependencies
 
 ZMQLib= -L$(Dependencies)/zeromq-4.0.7/lib -lzmq
 ZMQInclude= -I$(Dependencies)/zeromq-4.0.7/include/
@@ -39,10 +40,10 @@ cfd-registers.o: cfd-registers.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS) `pkg-config --cflags jsoncpp`
 
 # read v1495 counters and send to database
-v1495-counters-database: v1495-counters-database.cpp common.o ../../Monitoring/libDAQInterface/lib/libDAQInterface.so
-	$(CXX) -o $@ $^ -O3 -fPIC -std=c++20 -Wpedantic -lcaen++ -lCAENComm -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface -lpthread $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude) $(ToolDAQLib) $(ToolFrameworkLib) $(ZMQLib) $(BoostLib) -ljsoncpp
+v1495-counters-database: v1495-counters-database.cpp common.o $(DAQInterface)/lib/libDAQInterface.so
+	$(CXX) -o $@ $^ -O3 -fPIC -std=c++20 -Wpedantic -lcaen++ -lCAENComm -I$(DAQInterface)/include -L$(DAQInterface)/lib -lDAQInterface -lpthread $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude) $(ToolDAQLib) $(ToolFrameworkLib) $(ZMQLib) $(BoostLib) -ljsoncpp
 v1495-counters-database.o: v1495-counters-database.cpp common.hpp counters.hpp
-	$(CXX) -c $< $(CXXFLAGS) -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude)
+	$(CXX) -c $< $(CXXFLAGS) -I$(DAQInterface)/include -L$(DAQInterface)/lib -lDAQInterface $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude)
 
 # common functions
 common.o: common.cpp common.hpp
