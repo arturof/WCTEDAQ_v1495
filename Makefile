@@ -54,6 +54,4 @@ counters.hpp: make-counters.pl config.json VME1495_counters.txt
 	./$< config.json VME1495_counters.txt > $@
 
 clean:
-	rm -f v1495-registers v1495-counters cfd-registers v1495-counters-database \
-v1495-registers.o v1495-counters.o cfd-registers.o v1495-counters-database.o \
-common.o counters.hpp
+	rm -f v1495-registers v1495-counters cfd-registers v1495-counters-database v1495-registers.o v1495-counters.o cfd-registers.o v1495-counters-database.o common.o counters.hpp
