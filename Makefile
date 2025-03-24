@@ -20,33 +20,35 @@ ToolFrameworkInclude= -I$(Dependencies)/ToolFrameworkCore/include
 # applications to compile
 all: v1495-registers v1495-counters cfd-registers v1495-counters-database
 
+# read v1495 regiters
 v1495-registers: v1495-registers.o common.o
 	$(CXX) -o $@ $^ $(CXXFLAGS) `pkg-config --libs jsoncpp` -lcaen++ -lCAENComm
-
-v1495-counters: v1495-counters.o common.o
-	$(CXX) -o $@ $^ $(CXXFLAGS) -lcaen++ -lCAENComm
-
-cfd-registers: cfd-registers.o common.o
-	$(CXX) -o $@ $^ $(CXXFLAGS) `pkg-config --libs jsoncpp` -lcaen++ -lCAENComm
-
-v1495-counters-database: v1495-counters-database.cpp common.o ../../Monitoring/libDAQInterface/lib/libDAQInterface.so
-	$(CXX) -o $@ $^ -O3 -fPIC -std=c++20 -Wpedantic -lcaen++ -lCAENComm -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface -lpthread $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude) $(ToolDAQLib) $(ToolFrameworkLib) $(ZMQLib) $(BoostLib) -ljsoncpp
-
 v1495-registers.o: v1495-registers.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS) `pkg-config --cflags jsoncpp`
 
+# read v1495 counters
+v1495-counters: v1495-counters.o common.o
+	$(CXX) -o $@ $^ $(CXXFLAGS) -lcaen++ -lCAENComm
 v1495-counters.o: v1495-counters.cpp common.hpp counters.hpp
 	$(CXX) -c $< $(CXXFLAGS)
 
+# read cfd registers
+cfd-registers: cfd-registers.o common.o
+	$(CXX) -o $@ $^ $(CXXFLAGS) `pkg-config --libs jsoncpp` -lcaen++ -lCAENComm
 cfd-registers.o: cfd-registers.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS) `pkg-config --cflags jsoncpp`
 
+# read v1495 counters and send to database
+v1495-counters-database: v1495-counters-database.cpp common.o ../../Monitoring/libDAQInterface/lib/libDAQInterface.so
+	$(CXX) -o $@ $^ -O3 -fPIC -std=c++20 -Wpedantic -lcaen++ -lCAENComm -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface -lpthread $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude) $(ToolDAQLib) $(ToolFrameworkLib) $(ZMQLib) $(BoostLib) -ljsoncpp
 v1495-counters-database.o: v1495-counters-database.cpp common.hpp counters.hpp
 	$(CXX) -c $< $(CXXFLAGS) -I../../Monitoring/libDAQInterface/include -L../../Monitoring/libDAQInterface/lib -lDAQInterface $(ToolDAQInclude) $(ToolFrameworkInclude) $(ZMQInclude) $(BoostInclude)
 
+# common functions
 common.o: common.cpp common.hpp
 	$(CXX) -c $< $(CXXFLAGS)
 
+# generate array with counters names
 counters.hpp: make-counters.pl config.json VME1495_counters.txt
 	./$< config.json VME1495_counters.txt > $@
 
