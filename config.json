@@ -1,111 +1,117 @@
 {
-    "config_version": "0.1",
-    "short_name": "Low E v1",
-    "description": "Low Energy Trigger - version 0.2",
-    "input_signals": {
+    "config_version": "tc-1.2",
+    "short_name": "LE v43",
+    "description": "LE Trigger v4.3",
+    "cfd_modules": {
         "0": {
-            "short_name": "T00",
-            "description": "Upstream trigger scintillator 0 channel 0"
+            "address": "8700"
         },
         "1": {
-            "short_name": "T01",
-            "description": "Upstream trigger scintillator 0 channel 1"
+            "address": "8900"
         },
         "2": {
-            "short_name": "T02",
-            "description": "Upstream trigger scintillator 0 channel 2"
+            "address": "8A00"
         },
         "3": {
-            "short_name": "T03",
-            "description": "Upstream trigger scintillator 0 channel 3"
+            "address": "88AF"
+        }
+    },
+    "input_signals": {
+        "0": {
+            "short_name": "T0-0L",
+            "description": "Upstream trigger scintillator 0 left lower"
+        },
+        "1": {
+            "short_name": "T0-1L",
+            "description": "Upstream trigger scintillator 0 left upper"
+        },
+        "2": {
+            "short_name": "T0-0R",
+            "description": "Upstream trigger scintillator 0 right lower"
+        },
+        "3": {
+            "short_name": "T0-1R",
+            "description": "Upstream trigger scintillator 0 right upper"
         },
         "4": {
-            "short_name": "T10",
-            "description": "Downstream trigger scintillator 1 channel 0"
+            "short_name": "T1-0L",
+            "description": "Downstream trigger scintillator 1 left lower"
         },
         "5": {
-            "short_name": "T11",
-            "description": "Downstream trigger scintillator 1 channel 1"
+            "short_name": "T1-1L",
+            "description": "Downstream trigger scintillator 1 left upper"
         },
         "6": {
-            "short_name": "T12",
-            "description": "Downstream trigger scintillator 1 channel 2"
+            "short_name": "T1-0R",
+            "description": "Downstream trigger scintillator 1 right lower"
         },
         "7": {
-            "short_name": "T13",
-            "description": "Downstream trigger scintillator 1 channel 3"
-        },
-        "8": {
-            "short_name": "T2",
-            "description": "Small trigger scintillator upstream of magnet"
+            "short_name": "T1-1R",
+            "description": "Downstream trigger scintillator 1 right upper"
         },
         "9": {
-            "short_name": "HC0",
-            "description": "Hole counter 0"
+            "short_name": "HC-0",
+            "description": "Hole counter 0 upstream of ACT"
         },
         "10": {
-            "short_name": "HC1",
-            "description": "Hole counter 1"
-        },
-        "11": {
-            "short_name": "HC2",
-            "description": "Hole counter 2"
+            "short_name": "HC-1",
+            "description": "Hole counter 1 downstream of ACT"
         },
         "12": {
-            "short_name": "ACT00",
-            "description": "ACT module 0 channel 0"
+            "short_name": "ACT0-L",
+            "description": "ACT module 0 left"
         },
         "13": {
-            "short_name": "ACT01",
-            "description": "ACT module 0 channel 1"
+            "short_name": "ACT0-R",
+            "description": "ACT module 0 right"
         },
         "14": {
-            "short_name": "ACT10",
-            "description": "ACT module 1 channel 0"
+            "short_name": "ACT1-L",
+            "description": "ACT module 1 left"
         },
         "15": {
-            "short_name": "ACT11",
-            "description": "ACT module 1 channel 1"
+            "short_name": "ACT1-R",
+            "description": "ACT module 1 right"
         },
         "16": {
-            "short_name": "ACT20",
-            "description": "ACT module 2 channel 0"
+            "short_name": "ACT2-L",
+            "description": "ACT module 2 left"
         },
         "17": {
-            "short_name": "ACT21",
-            "description": "ACT module 2 channel 1"
+            "short_name": "ACT2-R",
+            "description": "ACT module 2 right"
         },
         "18": {
-            "short_name": "ACT30",
-            "description": "ACT module 3 channel 0"
+            "short_name": "ACT3-L",
+            "description": "ACT module 3 left"
         },
         "19": {
-            "short_name": "ACT31",
-            "description": "ACT module 3 channel 1"
+            "short_name": "ACT3-R",
+            "description": "ACT module 3 right"
         },
         "20": {
-            "short_name": "ACT40",
-            "description": "ACT module 4 channel 0"
+            "short_name": "ACT4-L",
+            "description": "ACT module 4 left"
         },
         "21": {
-            "short_name": "ACT41",
-            "description": "ACT module 4 channel 1"
+            "short_name": "ACT4-R",
+            "description": "ACT module 4 right"
         },
         "22": {
-            "short_name": "ACT50",
-            "description": "ACT module 5 channel 0"
+            "short_name": "ACT5-L",
+            "description": "ACT module 5 left"
         },
         "23": {
-            "short_name": "ACT51",
-            "description": "ACT module 5 channel 1"
+            "short_name": "ACT5-R",
+            "description": "ACT module 5 right"
         },
         "24": {
-            "short_name": "MUT0",
-            "description": "Muon tagger channel 0"
+            "short_name": "MuT-L",
+            "description": "Muon tagger left"
         },
         "25": {
-            "short_name": "MUT1",
-            "description": "Muon tagger channel 1"
+            "short_name": "MuT-R",
+            "description": "Muon tagger right"
         },
         "26": {
             "short_name": "BSW",
@@ -120,619 +126,512 @@
             "description": "Laser signal"
         },
         "29": {
-            "short_name": "CUSTOM",
+            "short_name": "XTRIG",
             "description": "Other trigger"
         },
-        "30": {
-            "short_name": "TOF0F",
-            "description": "TOF module 0 channel 15"
-        },
         "31": {
-            "short_name": "TDCT0",
+            "short_name": "TDCT00",
             "description": "TDC stop signal for TDC0"
         },
-        "32": {
-            "short_name": "HODO0",
-            "description": "Hodoscope channel 0"
-        },
-        "33": {
-            "short_name": "HODO1",
-            "description": "Hodoscope channel 1"
-        },
-        "34": {
-            "short_name": "HODO2",
-            "description": "Hodoscope channel 2"
-        },
-        "35": {
-            "short_name": "HODO3",
-            "description": "Hodoscope channel 3"
-        },
-        "36": {
-            "short_name": "HODO4",
-            "description": "Hodoscope channel 4"
-        },
-        "37": {
-            "short_name": "HODO5",
-            "description": "Hodoscope channel 5"
-        },
-        "38": {
-            "short_name": "HODO6",
-            "description": "Hodoscope channel 6"
-        },
         "39": {
-            "short_name": "HODO7",
-            "description": "Hodoscope channel 7"
+            "short_name": "ACTEVD",
+            "description": "ACT electron veto deactivate"
         },
         "40": {
-            "short_name": "HODO8",
-            "description": "Hodoscope channel 8"
+            "short_name": "PbG",
+            "description": "Lead glass"
         },
         "41": {
-            "short_name": "HODO9",
-            "description": "Hodoscope channel 9"
+            "short_name": "T3",
+            "description": "Small trigger scintillator (movable)"
         },
         "42": {
-            "short_name": "HODOA",
-            "description": "Hodoscope channel 10"
+            "short_name": "T4-L",
+            "description": "Trigger scintillator 4 left"
         },
         "43": {
-            "short_name": "HODOB",
-            "description": "Hodoscope channel 11"
-        },
-        "44": {
-            "short_name": "HODOC",
-            "description": "Hodoscope channel 12"
-        },
-        "45": {
-            "short_name": "HODOD",
-            "description": "Hodoscope channel 13"
+            "short_name": "T4-R",
+            "description": "Trigger scintillator 4 right"
         },
         "46": {
-            "short_name": "HODOE",
-            "description": "Hodoscope channel 14"
-        },
-        "47": {
-            "short_name": "HODOF",
-            "description": "Hodoscope channel 15"
-        },
-        "48": {
-            "short_name": "TDCT0",
+            "short_name": "TDCT01",
             "description": "TDC stop signal for TDC1"
         },
-        "64": {
-            "short_name": "TOF00",
-            "description": "TOF module 0 channel 0"
+        "48": {
+            "short_name": "TOF-0",
+            "description": "TOF channel 0"
         },
-        "65": {
-            "short_name": "TOF01",
-            "description": "TOF module 0 channel 1"
+        "49": {
+            "short_name": "TOF-1",
+            "description": "TOF channel 1"
         },
-        "66": {
-            "short_name": "TOF02",
-            "description": "TOF module 0 channel 2"
+        "50": {
+            "short_name": "TOF-2",
+            "description": "TOF channel 2"
         },
-        "67": {
-            "short_name": "TOF03",
-            "description": "TOF module 0 channel 3"
+        "51": {
+            "short_name": "TOF-3",
+            "description": "TOF channel 3"
         },
-        "68": {
-            "short_name": "TOF04",
-            "description": "TOF module 0 channel 4"
+        "52": {
+            "short_name": "TOF-4",
+            "description": "TOF channel 4"
         },
-        "69": {
-            "short_name": "TOF05",
-            "description": "TOF module 0 channel 5"
+        "53": {
+            "short_name": "TOF-5",
+            "description": "TOF channel 5"
         },
-        "70": {
-            "short_name": "TOF06",
-            "description": "TOF module 0 channel 6"
+        "54": {
+            "short_name": "TOF-6",
+            "description": "TOF channel 6"
         },
-        "71": {
-            "short_name": "TOF07",
-            "description": "TOF module 0 channel 7"
+        "55": {
+            "short_name": "TOF-7",
+            "description": "TOF channel 7"
         },
-        "72": {
-            "short_name": "TOF08",
-            "description": "TOF module 0 channel 8"
+        "56": {
+            "short_name": "TOF-8",
+            "description": "TOF channel 8"
         },
-        "73": {
-            "short_name": "TOF09",
-            "description": "TOF module 0 channel 9"
+        "57": {
+            "short_name": "TOF-9",
+            "description": "TOF channel 9"
         },
-        "74": {
-            "short_name": "TOF0A",
-            "description": "TOF module 0 channel 10"
+        "58": {
+            "short_name": "TOF-A",
+            "description": "TOF channel 10"
         },
-        "75": {
-            "short_name": "TOF0B",
-            "description": "TOF module 0 channel 11"
+        "59": {
+            "short_name": "TOF-B",
+            "description": "TOF channel 11"
         },
-        "76": {
-            "short_name": "TOF0C",
-            "description": "TOF module 0 channel 12"
+        "60": {
+            "short_name": "TOF-C",
+            "description": "TOF channel 12"
         },
-        "77": {
-            "short_name": "TOF0D",
-            "description": "TOF module 0 channel 13"
+        "61": {
+            "short_name": "TOF-D",
+            "description": "TOF channel 13"
         },
-        "78": {
-            "short_name": "TOF0E",
-            "description": "TOF module 0 channel 14"
+        "62": {
+            "short_name": "TOF-E",
+            "description": "TOF channel 14"
         },
-        "79": {
-            "short_name": "TOF0F",
-            "description": "TOF module 0 channel 15"
+        "63": {
+            "short_name": "TOF-F",
+            "description": "TOF channel 15"
+        }
+    },
+    "input_cfd_settings": {
+        "0": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "80": {
-            "short_name": "TOF10",
-            "description": "TOF module 1 channel 0"
+        "1": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "81": {
-            "short_name": "TOF11",
-            "description": "TOF module 1 channel 1"
+        "2": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "82": {
-            "short_name": "TOF12",
-            "description": "TOF module 1 channel 2"
+        "3": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "83": {
-            "short_name": "TOF13",
-            "description": "TOF module 1 channel 3"
+        "4": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "84": {
-            "short_name": "TOF14",
-            "description": "TOF module 1 channel 4"
+        "5": {
+            "enabled": "True",
+            "threshold": "20"
         },
-        "85": {
-            "short_name": "TOF15",
-            "description": "TOF module 1 channel 5"
+        "6": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "86": {
-            "short_name": "TOF16",
-            "description": "TOF module 1 channel 6"
+        "7": {
+            "enabled": "True",
+            "threshold": "15"
         },
-        "87": {
-            "short_name": "TOF17",
-            "description": "TOF module 1 channel 7"
+        "9": {
+            "enabled": "True",
+            "threshold": "7"
         },
-        "88": {
-            "short_name": "TOF18",
-            "description": "TOF module 1 channel 8"
+        "10": {
+            "enabled": "True",
+            "threshold": "7"
         },
-        "89": {
-            "short_name": "TOF19",
-            "description": "TOF module 1 channel 9"
+        "12": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "90": {
-            "short_name": "TOF1A",
-            "description": "TOF module 1 channel 10"
+        "13": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "91": {
-            "short_name": "TOF1B",
-            "description": "TOF module 1 channel 11"
+        "14": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "92": {
-            "short_name": "TOF1C",
-            "description": "TOF module 1 channel 12"
+        "15": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "93": {
-            "short_name": "TOF1D",
-            "description": "TOF module 1 channel 13"
+        "16": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "94": {
-            "short_name": "TOF1E",
-            "description": "TOF module 1 channel 14"
+        "17": {
+            "enabled": "True",
+            "threshold": "10"
         },
-        "95": {
-            "short_name": "TDCT0",
-            "description": "TDC stop signal for TDC2"
+        "18": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "19": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "20": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "21": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "22": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "23": {
+            "enabled": "True",
+            "threshold": "10"
+        },
+        "24": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "25": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "26": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "27": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "28": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "29": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "31": {
+            "enabled": "True",
+            "threshold": "100"
+        },
+        "39": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "40": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "41": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "42": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "43": {
+            "enabled": "True",
+            "threshold": "7"
+        },
+        "46": {
+            "enabled": "True",
+            "threshold": "100"
+        },
+        "48": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "49": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "50": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "51": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "52": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "53": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "54": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "55": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "56": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "57": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "58": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "59": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "60": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "61": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "62": {
+            "enabled": "True",
+            "threshold": "50"
+        },
+        "63": {
+            "enabled": "True",
+            "threshold": "50"
         }
     },
     "input_signal_treatments": {
         "0": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "1": {
-            "delay": "7",
-            "window_length": "3",
-            "invert": "True"
+            "delay": "0",
+            "window_length": "6"
         },
         "2": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "3": {
-            "delay": "255",
-            "window_length": "3",
-            "invert": "True"
+            "delay": "0",
+            "window_length": "6"
         },
         "4": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "5": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "6": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "7": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "8": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "6"
         },
         "9": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "10": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "11": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "12": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "13": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "14": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "15": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "16": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "17": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "18": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "19": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "20": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "21": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "22": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "23": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "24": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "25": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "26": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "1"
         },
         "27": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "1"
         },
         "28": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "1"
         },
         "29": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "30": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "5"
         },
         "31": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "32": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "33": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "34": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "35": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "36": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "37": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "38": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "39": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "5"
         },
         "40": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "41": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "42": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "43": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "44": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "45": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "46": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "47": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
         "48": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "64": {
+        "49": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "65": {
+        "50": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "66": {
+        "51": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "67": {
+        "52": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "68": {
+        "53": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "69": {
+        "54": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "70": {
+        "55": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "71": {
+        "56": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "72": {
+        "57": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "73": {
+        "58": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "74": {
+        "59": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "75": {
+        "60": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "76": {
+        "61": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "77": {
+        "62": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         },
-        "78": {
+        "63": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "79": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "80": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "81": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "82": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "83": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "84": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "85": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "86": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "87": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "88": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "89": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "90": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "91": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "92": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "93": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "94": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
-        },
-        "95": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "window_length": "4"
         }
     },
     "level_1_logics": {
@@ -740,61 +639,642 @@
             "short_name": "T0 L1",
             "description": "T0 coincidence",
             "inputs": "[0,1,2,3]",
+            "invert_inputs": "[]",
             "logic_type": "AND"
         },
         "1": {
             "short_name": "T1 L1",
             "description": "T1 coincidence",
             "inputs": "[4,5,6,7]",
+            "invert_inputs": "[]",
             "logic_type": "AND"
         },
         "2": {
-            "short_name": "ATCe",
-            "description": "ATC electron",
-            "inputs": "[12,13]",
+            "short_name": "TOFR",
+            "description": "TOF right",
+            "inputs": "[48,49,50,51,52,53,54,55]",
+            "invert_inputs": "[]",
             "logic_type": "OR"
+        },
+        "3": {
+            "short_name": "TOFL",
+            "description": "TOF left",
+            "inputs": "[56,57,58,59,60,61,62,63]",
+            "invert_inputs": "[]",
+            "logic_type": "OR"
+        },
+        "4": {
+            "short_name": "HC L1",
+            "description": "Hole counter",
+            "inputs": "[9,10]",
+            "invert_inputs": "[]",
+            "logic_type": "OR"
+        },
+        "5": {
+            "short_name": "MUON",
+            "description": "Muon tagger",
+            "inputs": "[24,25]",
+            "invert_inputs": "[]",
+            "logic_type": "OR"
+        },
+        "6": {
+            "short_name": "T0T1L1",
+            "description": "T0-T1 coincidence",
+            "inputs": "[0,1,2,3,4,5,6,7]",
+            "invert_inputs": "[]",
+            "logic_type": "AND"
+        },
+        "7": {
+            "short_name": "ACTeOR",
+            "description": "Description",
+            "inputs": "[12,13,14,15]",
+            "invert_inputs": "[]",
+            "logic_type": "OR"
+        },
+        "8": {
+            "short_name": "ACT0Rps",
+            "description": "ACT0R prescaled",
+            "inputs": "[13]",
+            "invert_inputs": "[39]",
+            "logic_type": "AND"
+        },
+        "9": {
+            "short_name": "ACT0Lps",
+            "description": "ACT0L prescaled",
+            "inputs": "[12]",
+            "invert_inputs": "[39]",
+            "logic_type": "AND"
         }
     },
     "level_1_output_treatments": {
         "0": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "delay": "4",
+            "window_length": "1"
         },
         "1": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "delay": "4",
+            "window_length": "1"
         },
         "2": {
             "delay": "0",
-            "window_length": "1",
-            "invert": "True"
+            "window_length": "5"
+        },
+        "3": {
+            "delay": "0",
+            "window_length": "5"
+        },
+        "4": {
+            "delay": "0",
+            "window_length": "10"
+        },
+        "5": {
+            "delay": "0",
+            "window_length": "1"
+        },
+        "6": {
+            "delay": "0",
+            "window_length": "19"
+        },
+        "7": {
+            "delay": "0",
+            "window_length": "10"
+        },
+        "8": {
+            "delay": "0",
+            "window_length": "10"
+        },
+        "9": {
+            "delay": "0",
+            "window_length": "10"
         }
     },
     "level_2_logics": {
         "0": {
-            "short_name": "LowE",
-            "description": "Low Energy Trigger with eVeto",
-            "inputs": "[0,1,2]",
-            "level_1_inputs": "[]",
-            "type": "AND"
-        }
-    },
-    "level_2_output_treatments": {
-        "0": {
-            "delay": "0",
-            "window_length": "1",
-            "invert": "False"
+            "short_name": "LE psV",
+            "description": "Low Energy Trigger prescaled eVeto",
+            "inputs": "[]",
+            "invert_inputs": "[]",
+            "level_1_inputs": "[6]",
+            "invert_level_1_inputs": "[8,9]",
+            "logic_type": "AND"
+        },
+        "1": {
+            "short_name": "LE TOF",
+            "description": "Low Energy Trigger with TOF",
+            "inputs": "[]",
+            "invert_inputs": "[]",
+            "level_1_inputs": "[2,3,6]",
+            "invert_level_1_inputs": "[4]",
+            "logic_type": "AND"
+        },
+        "2": {
+            "short_name": "LE e",
+            "description": "Low Energy Trigger with electron",
+            "inputs": "[]",
+            "invert_inputs": "[]",
+            "level_1_inputs": "[2,3,6,7]",
+            "invert_level_1_inputs": "[4]",
+            "logic_type": "AND"
+        },
+        "3": {
+            "short_name": "LE mu",
+            "description": "Low Energy Trigger with muon",
+            "inputs": "[]",
+            "invert_inputs": "[]",
+            "level_1_inputs": "[5,6]",
+            "invert_level_1_inputs": "[4]",
+            "logic_type": "AND"
         }
     },
     "output_lemo_assignments": {
         "0": {
+            "short_name": "TDCT0",
+            "description": "Event trigger (TDC_STOP)",
+            "source": "level 1",
+            "source_serial": "6",
+            "treatment": "True"
+        },
+        "1": {
+            "short_name": "EL TAG",
+            "description": "Electron tagged",
+            "source": "level 2",
+            "source_serial": "2",
+            "treatment": "True"
+        },
+        "2": {
+            "short_name": "MU TAG",
+            "description": "Muon tagged",
+            "source": "level 2",
+            "source_serial": "3",
+            "treatment": "True"
+        },
+        "3": {
+            "short_name": "BSWarn",
+            "description": "Beam spill warning",
+            "source": "input",
+            "source_serial": "26",
+            "treatment": "True"
+        },
+        "4": {
+            "short_name": "BSEnd",
+            "description": "Beam spill end",
+            "source": "input",
+            "source_serial": "27",
+            "treatment": "True"
+        },
+        "5": {
+            "short_name": "LASER",
+            "description": "Laser signal",
+            "source": "input",
+            "source_serial": "28",
+            "treatment": "True"
+        },
+        "6": {
+            "short_name": "XTRIG",
+            "description": "Other trigger",
+            "source": "input",
+            "source_serial": "29",
+            "treatment": "True"
+        },
+        "7": {
+            "short_name": "QDCG",
+            "description": "QDC gate open",
+            "source": "level 1",
+            "source_serial": "6",
+            "treatment": "True"
+        },
+        "9": {
+            "short_name": "OUT9",
+            "description": "General purpose #9",
             "source": "level 2",
             "source_serial": "0",
-            "treatment": "False"
+            "treatment": "True"
+        },
+        "10": {
+            "short_name": "OUT10",
+            "description": "General purpose #10",
+            "source": "level 2",
+            "source_serial": "1",
+            "treatment": "True"
+        },
+        "11": {
+            "short_name": "OUT11",
+            "description": "General purpose #11",
+            "source": "level 2",
+            "source_serial": "2",
+            "treatment": "True"
+        },
+        "12": {
+            "short_name": "OUT12",
+            "description": "General purpose #12",
+            "source": "level 2",
+            "source_serial": "3",
+            "treatment": "True"
+        },
+        "13": {
+            "short_name": "OUT13",
+            "description": "General purpose #13",
+            "source": "level 2",
+            "source_serial": "2",
+            "treatment": "True"
+        },
+        "14": {
+            "short_name": "UNUSED",
+            "description": "Not used",
+            "source": "level 2",
+            "source_serial": "3",
+            "treatment": "True"
+        },
+        "15": {
+            "short_name": "LE nV",
+            "description": "Low Energy Trigger without eVeto",
+            "source": "level 2",
+            "source_serial": "1",
+            "treatment": "True"
+        },
+        "8": {
+            "short_name": "XTRIG",
+            "description": "to allow ind. readout",
+            "source": "input",
+            "source_serial": "29",
+            "treatment": "True"
+        }
+    },
+    "trigger_digitizer_board_connections": {
+        "55": {
+            "board": "2",
+            "channel": "15",
+            "source": "input",
+            "source_serial": "62"
+        },
+        "56": {
+            "board": "2",
+            "channel": "16",
+            "source": "input",
+            "source_serial": "63"
+        },
+        "57": {
+            "board": "2",
+            "channel": "17",
+            "source": "input",
+            "source_serial": "42"
+        },
+        "58": {
+            "board": "2",
+            "channel": "18",
+            "source": "input",
+            "source_serial": "43"
+        },
+        "40": {
+            "board": "2",
+            "channel": "0",
+            "source": "input",
+            "source_serial": "48"
+        },
+        "41": {
+            "board": "2",
+            "channel": "1",
+            "source": "input",
+            "source_serial": "49"
+        },
+        "42": {
+            "board": "2",
+            "channel": "2",
+            "source": "input",
+            "source_serial": "50"
+        },
+        "43": {
+            "board": "2",
+            "channel": "3",
+            "source": "input",
+            "source_serial": "51"
+        },
+        "44": {
+            "board": "2",
+            "channel": "4",
+            "source": "input",
+            "source_serial": "52"
+        },
+        "45": {
+            "board": "2",
+            "channel": "5",
+            "source": "input",
+            "source_serial": "53"
+        },
+        "46": {
+            "board": "2",
+            "channel": "6",
+            "source": "input",
+            "source_serial": "54"
+        },
+        "47": {
+            "board": "2",
+            "channel": "7",
+            "source": "input",
+            "source_serial": "55"
+        },
+        "50": {
+            "board": "2",
+            "channel": "10",
+            "source": "input",
+            "source_serial": "57"
+        },
+        "51": {
+            "board": "2",
+            "channel": "11",
+            "source": "input",
+            "source_serial": "58"
+        },
+        "52": {
+            "board": "2",
+            "channel": "12",
+            "source": "input",
+            "source_serial": "59"
+        },
+        "53": {
+            "board": "2",
+            "channel": "13",
+            "source": "input",
+            "source_serial": "60"
+        },
+        "18": {
+            "board": "0",
+            "channel": "18",
+            "source": "input",
+            "source_serial": "24"
+        },
+        "19": {
+            "board": "0",
+            "channel": "19",
+            "source": "input",
+            "source_serial": "25"
+        },
+        "3": {
+            "board": "0",
+            "channel": "3",
+            "source": "lemo",
+            "source_serial": "3"
+        },
+        "4": {
+            "board": "0",
+            "channel": "4",
+            "source": "lemo",
+            "source_serial": "4"
+        },
+        "5": {
+            "board": "0",
+            "channel": "5",
+            "source": "lemo",
+            "source_serial": "5"
+        },
+        "7": {
+            "board": "0",
+            "channel": "7",
+            "source": "lemo",
+            "source_serial": "6"
+        },
+        "17": {
+            "board": "0",
+            "channel": "17",
+            "source": "input",
+            "source_serial": "40"
+        },
+        "0": {
+            "board": "0",
+            "channel": "0",
+            "source": "other",
+            "source_serial": "TDCT0"
+        },
+        "39": {
+            "board": "1",
+            "channel": "19",
+            "source": "other",
+            "source_serial": "TDCT0"
+        },
+        "59": {
+            "board": "2",
+            "channel": "19",
+            "source": "other",
+            "source_serial": "TDCT0"
+        },
+        "1": {
+            "board": "0",
+            "channel": "1",
+            "source": "lemo",
+            "source_serial": "1"
+        },
+        "2": {
+            "board": "0",
+            "channel": "2",
+            "source": "lemo",
+            "source_serial": "2"
+        },
+        "11": {
+            "board": "0",
+            "channel": "11",
+            "source": "input",
+            "source_serial": "41"
+        },
+        "12": {
+            "board": "0",
+            "channel": "12",
+            "source": "input",
+            "source_serial": "0"
+        },
+        "13": {
+            "board": "0",
+            "channel": "13",
+            "source": "input",
+            "source_serial": "2"
+        },
+        "14": {
+            "board": "0",
+            "channel": "14",
+            "source": "input",
+            "source_serial": "1"
+        },
+        "15": {
+            "board": "0",
+            "channel": "15",
+            "source": "input",
+            "source_serial": "3"
+        },
+        "20": {
+            "board": "1",
+            "channel": "0",
+            "source": "input",
+            "source_serial": "12"
+        },
+        "21": {
+            "board": "1",
+            "channel": "1",
+            "source": "input",
+            "source_serial": "13"
+        },
+        "22": {
+            "board": "1",
+            "channel": "2",
+            "source": "input",
+            "source_serial": "14"
+        },
+        "23": {
+            "board": "1",
+            "channel": "3",
+            "source": "input",
+            "source_serial": "15"
+        },
+        "25": {
+            "board": "1",
+            "channel": "5",
+            "source": "input",
+            "source_serial": "16"
+        },
+        "26": {
+            "board": "1",
+            "channel": "6",
+            "source": "input",
+            "source_serial": "17"
+        },
+        "27": {
+            "board": "1",
+            "channel": "7",
+            "source": "input",
+            "source_serial": "18"
+        },
+        "28": {
+            "board": "1",
+            "channel": "8",
+            "source": "input",
+            "source_serial": "19"
+        },
+        "29": {
+            "board": "1",
+            "channel": "9",
+            "source": "input",
+            "source_serial": "20"
+        },
+        "30": {
+            "board": "1",
+            "channel": "10",
+            "source": "input",
+            "source_serial": "21"
+        },
+        "31": {
+            "board": "1",
+            "channel": "11",
+            "source": "input",
+            "source_serial": "22"
+        },
+        "32": {
+            "board": "1",
+            "channel": "12",
+            "source": "input",
+            "source_serial": "23"
+        },
+        "33": {
+            "board": "1",
+            "channel": "13",
+            "source": "input",
+            "source_serial": "4"
+        },
+        "34": {
+            "board": "1",
+            "channel": "14",
+            "source": "input",
+            "source_serial": "6"
+        },
+        "35": {
+            "board": "1",
+            "channel": "15",
+            "source": "input",
+            "source_serial": "5"
+        },
+        "36": {
+            "board": "1",
+            "channel": "16",
+            "source": "input",
+            "source_serial": "7"
+        },
+        "37": {
+            "board": "1",
+            "channel": "17",
+            "source": "input",
+            "source_serial": "9"
+        },
+        "38": {
+            "board": "1",
+            "channel": "18",
+            "source": "input",
+            "source_serial": "10"
+        },
+        "48": {
+            "board": "2",
+            "channel": "8",
+            "source": "input",
+            "source_serial": "56"
+        },
+        "54": {
+            "board": "2",
+            "channel": "14",
+            "source": "input",
+            "source_serial": "61"
+        }
+    },
+    "patch_panel_connections": {
+        "1": {
+            "source": "other",
+            "source_serial": "TDCT0"
+        },
+        "2": {
+            "source": "input",
+            "source_serial": "29"
+        },
+        "15": {
+            "source": "lemo",
+            "source_serial": "15"
+        },
+        "3": {
+            "source": "input",
+            "source_serial": "39"
+        },
+        "4": {
+            "source": "input",
+            "source_serial": "26"
+        },
+        "5": {
+            "source": "input",
+            "source_serial": "27"
+        },
+        "9": {
+            "source": "lemo",
+            "source_serial": "9"
+        },
+        "10": {
+            "source": "lemo",
+            "source_serial": "10"
+        },
+        "11": {
+            "source": "lemo",
+            "source_serial": "11"
+        },
+        "12": {
+            "source": "lemo",
+            "source_serial": "12"
+        },
+        "13": {
+            "source": "lemo",
+            "source_serial": "13"
+        },
+        "14": {
+            "source": "other",
+            "source_serial": "LaserIn"
         }
     },
     "prescalers": {},
-    "deadtime": {}
+    "spill_channels": {
+        "pre_spill": "26",
+        "end_spill": "27",
+        "enabled": "True"
+    },
+    "deadtime": "25000"
 }
