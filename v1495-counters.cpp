@@ -2,6 +2,9 @@
 
 #include <cstdio>
 #include <cstring>
+#include <iomanip>
+#include <vector>
+#include <string>
 
 #include <getopt.h>
 
@@ -92,16 +95,36 @@ int main(int argc, char** argv) {
         connection.arg = str_to_uint32(arg);
 
     caen::V1495 v1495(connection);
-    for (int i = 0; i < sizeof(counters) / sizeof(*counters); ++i)
-      std::cout
-        << counters[i].name
-        << ": "
-        << v1495.read32(counters[i].address)
-        << '\n';
+
+    // read counters
+    std::vector<std::string> counters_name;
+    std::vector<uint32_t> counters_vals;
+    for (int i = 1; i < sizeof(counters) / sizeof(*counters); i++) {
+      counters_name.push_back(counters[i].name);
+      uint32_t val = v1495.read32(counters[i].address);
+      counters_vals.push_back(val);
+    }
 
     if (reset) v1495.write32(0x3002, 1);
 
+    // print counters
+    for (int i = 0; i < counters_name.size(); i++) {
+      std::cout
+        << std::left
+        << std::setw(4)
+        << i
+        << std::setw(7)
+        << counters_name[i]
+        << ": "
+        << std::setw(12)
+        << counters_vals[i];
+      if ((i+1)%4==0) std::cout << std::endl;
+      if ((i+1)%32==0) std::cout << std::endl;
+    }
+    std::cout << std::endl;
+
     return 0;
+
   } catch (std::exception& e) {
     std::cerr << argv[0] << ": " << e.what() << std::endl;
     return 1;
