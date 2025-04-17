@@ -35,7 +35,7 @@ struct CounterInfo{
 };
 
 //Function to get counter names from the json file
-void getCounterNames(vector<CounterInfo> &counterInfo);
+void getCounterNames(string jsonConfig, vector<CounterInfo> &counterInfo);
 
 bool keep_running = true;
 bool reset_counters = false;
@@ -106,14 +106,6 @@ void usage(const char* argv0) {
   ;
 };
 
-struct Counter {
-  const char* name;
-  const char* description;
-  uint16_t address;
-};
-
-#include "counters.hpp"
-
 int main(int argc, char** argv) {
 
   //Read in the counter register information
@@ -164,6 +156,7 @@ int main(int argc, char** argv) {
 
     const char* arg   = nullptr;
     bool        reset = false;
+    string      json_config = "/home/mpmt/firmware/TriggerConfig/configurations/written_config.json";
 
     while (true) {
       static option options[] = {
@@ -173,10 +166,11 @@ int main(int argc, char** argv) {
         { "link",    required_argument, nullptr, 'l' },
         { "reset",   no_argument,       nullptr, 'r' },
         { "vme",     required_argument, nullptr, 'v' },
-        { "noalert", no_argument,       nullptr, 'n' }
+        { "noalert", no_argument,       nullptr, 'n' },
+        { "json",    required_argument, nullptr, 'j' }
       };
 
-      int c = getopt_long(argc, argv, "a:c:hl:rnv:", options, nullptr);
+      int c = getopt_long(argc, argv, "a:c:hl:rnv:j:", options, nullptr);
       if (c == -1) break;
       
       switch (c) {
@@ -206,6 +200,10 @@ int main(int argc, char** argv) {
         case 'n':
           std::cout << "Using mode with no end-of-spill alert" << std::endl;
           no_alert_mode = true;
+          break;
+        case 'j':
+          std::cout << "Using json configuration file " << optarg << std::endl;
+          json_config = optarg;
           break;
         case '?':
           return 1;
@@ -271,7 +269,7 @@ int main(int argc, char** argv) {
 
           //Get the counter names and confirm which should be read
           //std::cout << "Get the counter names" << std::endl;
-          getCounterNames(allCounters);
+          getCounterNames(json_config,allCounters);
 
           //Make an instance of the monitoring data storage
           Store monitoring_data;
@@ -341,7 +339,7 @@ int main(int argc, char** argv) {
 
 };
 
-void getCounterNames(vector<CounterInfo> &counterInfo){
+void getCounterNames(string jsonConfig, vector<CounterInfo> &counterInfo){
 
   //reset values
   for(int i=0; i<counterInfo.size(); i++){
@@ -350,7 +348,7 @@ void getCounterNames(vector<CounterInfo> &counterInfo){
   }   
   //Get names corresponding to addresses from the json file
   Json::Value counters;
-  std::ifstream counter_file("/home/mpmt/firmware/TriggerConfig/configurations/written_config.json",std::ifstream::binary);
+  std::ifstream counter_file(jsonConfig,std::ifstream::binary);
   counter_file >> counters;
 
   //Iterate through the addresses and check for associated names
